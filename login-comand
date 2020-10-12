@@ -1,0 +1,11 @@
+node {
+  def remote = [:]
+  remote.name = 'test'
+  remote.host = '167.86.66.159'
+  remote.user = 'root'
+  remote.password = ''
+  remote.allowAnyHosts = true
+  stage('Remote SSH') {
+    sshScript remote: remote, ssh: "ps -aux"
+  }
+}
